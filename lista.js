@@ -5,13 +5,12 @@ function mostrarLista(pokemones) {
     const seccion = document.createElement("section");
     seccion.classList.add("c-lista"); 
 
-    /*
+/*
     const buscador = document.createElement("input");
     buscador.classList.add("c-buscador");
     buscador.type = "text"
     buscador.addEventListener("input", buscarPoke);
-    */
-
+*/
     for (let i = 0; i < pokemones.length; i++) {
         let id = pokemones[i].url.split("/")[6];
         Pokes += `
@@ -21,21 +20,9 @@ function mostrarLista(pokemones) {
             <p>${pokemones[i].name}</p>
         </div>`;
     }
-
     seccion.innerHTML = Pokes;
-
+    
     /*app.appendChild(buscador);*/
     app.appendChild(seccion);
-}
 
-// Mover esta parte fuera de la función mostrarLista
-async function conexionLista() {
-    const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1025');
-    const data = await res.json();
-    return data.results;
-}
-
-async function General() {
-    const infoPokes = await conexionLista();
-    mostrarLista(infoPokes);
 }

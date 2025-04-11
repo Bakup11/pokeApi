@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PokeAPI</title>
-  <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeApp</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <header class="c-header">
-    <img src="./img/logo.png" alt="Logo" class="c-header-logo">
-    <nav class="c-nav">
-      <button onclick="General()">Todos</button>
-      <button onclick="mostrarMios()">Mis Pokémon</button>
-      <button onclick="mostrarAleatorio()">Aleatorio</button>
-      <button onclick="mostrarFavoritos()">Favoritos</button>
-      <button onclick="mostrarDatos()">Estadísticas</button>
-    </nav>
-  </header>
+<body>    
+    <main id="app">
+        <!-- Contenido dinámico -->
+    </main>
 
-  <main id="app" class="c-main">
-    <!-- Aquí se cargan dinámicamente los pokémon -->
-  </main>
+    <aside class="c-nav">
+        <button class="c-nav-item" onclick="mostrarLista()">Lista de Pokes</button>
+        <button class="c-nav-item" onclick="mostrarUsuario()">Usuario</button>
+        <button class="c-nav-item" onclick="mostrarAleatorio()">Aleatorio</button>
+        <button class="c-nav-item" onclick="mostrarDatos()">Datos</button>
+        <button class="c-nav-item" onclick="mostrarFavoritos()">Favoritos</button>
+    </aside>
 
-  <!-- Archivos JavaScript (en orden) -->
-  <script src="lista.js"></script>
-  <script src="mios.js"></script>
-  <script src="datos.js"></script>
-  <script src="favoritos.js"></script>
-  <script src="aleatorio.js"></script>
-  <script src="detalle.js"></script>
-  <script src="api.js"></script>
+    
+
+    <script src="api.js"></script>
+    <script src="lista.js"></script>
+    <script src="usuario.js"></script>
+    <script src="datos.js"></script>
+    <script src="aleatorio.js"></script>
+    <script src="favoritos.js"></script>
+    <script src="detalle.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", General)
+    </script>
 </body>
 </html>
