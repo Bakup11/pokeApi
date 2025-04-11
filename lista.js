@@ -34,3 +34,4 @@ function mostrarLista(pokemones) {
         const infoPokes = await conexionLista();
         mostrarLista(infoPokes)
     }
+}
